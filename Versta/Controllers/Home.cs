@@ -34,8 +34,15 @@ namespace Versta.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(Order order)
         {
-            await ordersProvider.AddAsync(order);
-            return Add();
+            bool isAdded = await ordersProvider.AddAsync(order);
+            if (isAdded)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return Add();
+            }
         }
     }
 }

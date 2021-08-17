@@ -33,14 +33,15 @@ namespace Versta.Services.OrdersProvider
             }
         };
 
-        public async Task AddAsync(Order order)
+        public async Task<bool> AddAsync(Order order)
         {
-            await Task.Run(() => {
+            return await Task.Run(() => {
                 lock(_lock)
                 {
                     order.Id = Guid.NewGuid();
                     orders.Add(order);
                 }
+                return true;
             });
         }
 
