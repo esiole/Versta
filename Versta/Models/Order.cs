@@ -4,6 +4,7 @@ namespace Versta.Models
 {
     public class Order
     {
+        public Guid Id { get; set; }
         public string SenderCity { get; set; }
         public string SenderAddress { get; set; }
         public string RecipientCity { get; set; }
