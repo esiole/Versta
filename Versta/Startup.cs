@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Versta.Services.OrdersProvider;
 
 namespace Versta
 {
@@ -9,6 +10,7 @@ namespace Versta
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IOrdersProvider, MockOrdersProvider>();
             services.AddMvc();
         }
 
