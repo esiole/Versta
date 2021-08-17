@@ -1,0 +1,38 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "Новый заказ";
+}
+
+<form asp-controller="Home" asp-action="Add" method="post">
+    <div>
+        <div>
+            <label asp-for="SenderCity"></label>
+            <input asp-for="SenderCity" />
+        </div>
+        <div>
+            <label asp-for="SenderAddress"></label>
+            <input asp-for="SenderAddress" />
+        </div>
+    </div>
+    <div>
+        <div>
+            <label asp-for="RecipientCity"></label>
+            <input asp-for="RecipientCity" />
+        </div>
+        <div>
+            <label asp-for="RecipientAddress"></label>
+            <input asp-for="RecipientAddress" />
+        </div>
+    </div>
+    <div>
+        <div>
+            <label asp-for="WeightInKg"></label>
+            <input asp-for="WeightInKg" />
+        </div>
+        <div>
+            <label asp-for="DateOfReceiving"></label>
+            <input asp-for="DateOfReceiving" />
+        </div>
+    </div>
+    <input type="submit" value="Добавить" />
+</form>

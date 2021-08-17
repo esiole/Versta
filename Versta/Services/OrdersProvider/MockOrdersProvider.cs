@@ -8,6 +8,7 @@ namespace Versta.Services.OrdersProvider
 {
     public class MockOrdersProvider : IOrdersProvider
     {
+        private static object _lock = new();
         private static readonly List<Order> orders = new()
         {
             new Order()
@@ -34,7 +35,13 @@ namespace Versta.Services.OrdersProvider
 
         public async Task AddAsync(Order order)
         {
-            throw new NotImplementedException();
+            await Task.Run(() => {
+                lock(_lock)
+                {
+                    order.Id = Guid.NewGuid();
+                    orders.Add(order);
+                }
+            });
         }
 
         public async Task<IEnumerable<Order>> GetOrdersAsync() => await Task.Run(() => orders);
