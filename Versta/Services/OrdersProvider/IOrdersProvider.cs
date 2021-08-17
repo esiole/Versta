@@ -4,7 +4,7 @@ using Versta.Models;
 
 namespace Versta.Services.OrderProvider
 {
-    public interface IOrderProvider
+    public interface IOrdersProvider
     {
         public Task AddAsync(Order order);
         public Task<IEnumerable<Order>> GetOrdersAsync();
