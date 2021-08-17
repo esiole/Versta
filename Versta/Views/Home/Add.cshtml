@@ -8,31 +8,42 @@
         <div>
             <label asp-for="SenderCity"></label>
             <input asp-for="SenderCity" />
+            <span asp-validation-for="SenderCity"></span>
         </div>
         <div>
             <label asp-for="SenderAddress"></label>
             <input asp-for="SenderAddress" />
+            <span asp-validation-for="SenderAddress"></span>
         </div>
     </div>
     <div>
         <div>
             <label asp-for="RecipientCity"></label>
             <input asp-for="RecipientCity" />
+            <span asp-validation-for="RecipientCity"></span>
         </div>
         <div>
             <label asp-for="RecipientAddress"></label>
             <input asp-for="RecipientAddress" />
+            <span asp-validation-for="RecipientAddress"></span>
         </div>
     </div>
     <div>
         <div>
             <label asp-for="WeightInKg"></label>
             <input asp-for="WeightInKg" />
+            <span asp-validation-for="WeightInKg"></span>
         </div>
         <div>
             <label asp-for="DateOfReceiving"></label>
             <input asp-for="DateOfReceiving" />
+            <span asp-validation-for="DateOfReceiving"></span>
         </div>
     </div>
     <input type="submit" value="Добавить" />
 </form>
+
+@section scripts {
+    <script src="~/js/lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/js/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
