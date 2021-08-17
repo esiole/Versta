@@ -9,7 +9,7 @@ namespace Versta.Models
         public string SenderAddress { get; set; }
         public string RecipientCity { get; set; }
         public string RecipientAddress { get; set; }
-        public double Weight { get; set; }
+        public double WeightInKg { get; set; }
         public DateTime DateOfReceiving { get; set; }
     }
 }
