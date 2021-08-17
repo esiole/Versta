@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Versta.Models;
 
-namespace Versta.Services.OrderProvider
+namespace Versta.Services.OrdersProvider
 {
     public interface IOrdersProvider
     {
