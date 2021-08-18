@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading.Tasks;
 using Versta.Models;
 using Versta.Services.OrdersProvider;
@@ -32,9 +34,14 @@ namespace Versta.Controllers
 
         [Route("/add")]
         [HttpPost]
-        public async Task<IActionResult> Add(Order order)
+        public async Task<IActionResult> Add(Order order, string weight)
         {
+            if (weight != null)
+            {
+                order.WeightInKg = Double.Parse(weight, CultureInfo.InvariantCulture);
+            }
             bool isAdded = await ordersProvider.AddAsync(order);
+
             if (isAdded)
             {
                 return RedirectToAction("Index");

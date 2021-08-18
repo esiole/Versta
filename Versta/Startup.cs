@@ -22,7 +22,7 @@ namespace Versta
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<VerstaDbContext>(options => options.UseSqlServer(connection));
-            services.AddTransient<IOrdersProvider, MockOrdersProvider>();
+            services.AddTransient<IOrdersProvider, DbOrdersProvider>();
             services.AddMvc();
         }
 
