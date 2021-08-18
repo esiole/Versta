@@ -3,10 +3,22 @@
     ViewData["Title"] = "Главная";
 }
 
-<table>
-    <thead>
-        <tr>
-            <td>Номер</td>
+<div class="d-flex flex-row justify-content-between align-items-center mt-3 mb-2">
+    <div>
+        <h2>Список заказов</h2>
+    </div>
+    <div>
+        <a asp-controller="Home" asp-action="Add" aria-label="Новый заказ" title="Новый заказ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+            </svg>
+        </a>
+    </div>
+</div>
+<table class="table table-hover table-bordered">
+    <thead class="table-dark text-center">
+        <tr class="align-middle">
+            <td class="align-middle">Номер</td>
             <td>Город отправителя</td>
             <td>Адрес отправителя</td>
             <td>Город получателя</td>
@@ -18,14 +30,14 @@
     <tbody>
         @foreach (Order order in Model)
         {
-            <tr>
+            <tr class="align-middle">
                 <td>@order.Id</td>
                 <td>@order.SenderCity</td>
                 <td>@order.SenderAddress</td>
                 <td>@order.RecipientCity</td>
                 <td>@order.RecipientAddress</td>
                 <td>@order.WeightInKg</td>
-                <td>@order.DateOfReceiving</td>
+                <td>@order.DateOfReceiving.ToString("d")</td>
             </tr>
         }
     </tbody>

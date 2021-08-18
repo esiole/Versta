@@ -1,0 +1,20 @@
+﻿main {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+﻿main > .container {
+    padding: 60px 15px 0;
+}
+
+.body-form-add {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.form-add {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
